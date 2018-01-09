@@ -1,0 +1,11 @@
+coverage
+src/public/*
+src/view/*
+node_modules/
+test/
+app.js
+assets/*
+index.js
+routes/*
+build/*
+middleware/*

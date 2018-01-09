@@ -1,0 +1,14 @@
+- var navs = [ { title:'首页', path:'javascript:;' }, { title:'随笔', path:'javascript:;' }, { title:'图片', path:'javascript:;' }, { title:'音乐', path:'javascript:;' }, { title:'游戏', path:'javascript:;' }, { title:'留言', path:'javascript:;' } ]
+nav.navbar.navbar-fixed-bottom.navbar-default
+    .container-fluid
+        div.navbar-header
+            button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false")
+                span.sr-only
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+        div#navbar.collapse.navbar-collapse
+            ul.nav.navbar-nav
+                - for (var x = 0; x < navs.length; x++)
+                    li
+                        a(href= navs[x].path)= navs[x].title
