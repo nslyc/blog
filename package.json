@@ -13,8 +13,6 @@
         "start:prod": "better-npm-run start:prod",
         "build": "better-npm-run build",
         "watch:assets": "npm run clean && webpack --watch --colors --display-error-details --config build/webpack.config.js",
-        "lint": "esw .",
-        "lint:watch": "npm run lint -- --watch",
         "clean": "rimraf public/*"
     },
     "betterScripts": {
@@ -31,7 +29,7 @@
             }
         },
         "build": {
-            "command": "npm-run-all --parallel clean lint && webpack --colors --display-error-details --config build/webpack.config.js",
+            "command": "npm-run-all --parallel clean && webpack --colors --display-error-details --config build/webpack.config.js",
             "env": {
                 "NODE_ENV": "production"
             }
@@ -66,9 +64,6 @@
         "chalk": "^1.1.3",
         "copy-webpack-plugin": "^4.0.1",
         "css-loader": "^0.28.4",
-        "eslint": "^4.1.1",
-        "eslint-config-egg": "^4.2.1",
-        "eslint-watch": "^3.1.2",
         "eventsource-polyfill": "^0.9.6",
         "extract-text-webpack-plugin": "^2.1.2",
         "html-loader": "^0.4.5",
