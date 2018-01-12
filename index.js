@@ -4,6 +4,8 @@ require('babel-register')({
 const Koa = require('koa');
 const path = require('path');
 const serve = require('koa-static');
+const views = require('koa-views')
+const favicon = require('koa-favicon');
 const assetsMiddleware = require('./middleware/assetsMiddleware');
 const index = require('./routes/index.js');
 const chalkInfo = require('./build/chalkConfig')['chalkInfo'];
@@ -15,11 +17,11 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 
 const app = new Koa();
 
-const views = require('koa-views')
 app.use(views(__dirname + '/views', {
     extension: 'pug'
 }))
 
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 if (IS_DEV) {
     const webpack = require('webpack');
     const devMiddleware = require('./middleware/devMiddleware');

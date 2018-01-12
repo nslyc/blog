@@ -1,0 +1,56 @@
+.collapse {
+    -webkit-transform: translate(8.8rem);
+    transform: translate(8.8rem)
+}
+
+nav.navs {
+    width: 8.8rem;
+    height: 100%;
+    background-color: #e7eaee;
+    position: fixed;
+    left: -8.8rem;
+    top: 0;
+    transition: 0.75s;
+    z-index: 99;
+    dl {
+        float: left;
+        padding-left: 1rem;
+    }
+    .logo {
+        height: 2.8rem;
+        margin: 1.6875rem 1rem;
+        a {
+            display: block;
+            height: 100%;
+        }
+        img {
+            height: 100%;
+        }
+    }
+    dd {
+        line-height: 1;
+        padding: .5rem 1.25rem;
+        margin: .5rem 0;
+        -webkit-transform: translate(-100%);
+        transform: translate(-100%);
+        a {
+            font-size: 1rem;
+            color: #FFF
+        }
+        span {
+            color: #1a1a1a
+        }
+        &.active span {
+            color: #23a392
+        }
+    }
+}
+
+.nav-menu {
+    display: block;
+    position: absolute;
+    top: 0.625rem;
+    right: 0.75rem;
+    padding: .5rem;
+    z-index: 99;
+}
