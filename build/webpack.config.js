@@ -52,7 +52,10 @@ webpackConfig.output = {
 const copyImages = new CopyWebpackPlugin([{
     from: project.paths.src('assets/images'),
     to: project.paths.src('public/images'),
-}, ]);
+}, {
+    from: project.paths.src('assets/favicon.ico'),
+    to: project.paths.src('public/favicon.ico'),
+}]);
 
 const extractSass = new ExtractTextPlugin({
     filename: __DEV__ ? 'application.css' : `[name].[${project.compiler_hash_type}].css`,

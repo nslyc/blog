@@ -1,0 +1,17 @@
+- var navs = [ { title:'首页', path:'/' }, { title:'随笔', path:'/essay' }, { title:'图片', path:'/image' }, { title:'音乐', path:'/music' }, { title:'游戏', path:'/game' }, { title:'留言', path:'/leave' } ]
+nav.navs
+    dl
+        dt.logo
+            a(href="#")
+                img(src="images/logo.png")
+        - for (var x = 0; x < navs.length; x++)
+            if x === 0
+                dd.active
+                    a(href= navs[x].path)
+                        span= navs[x].title
+            else
+                dd
+                    a(href= navs[x].path)
+                        span= navs[x].title
+.nav-menu
+    .glyphicon.glyphicon-list

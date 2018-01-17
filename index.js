@@ -21,7 +21,7 @@ app.use(views(__dirname + '/views', {
     extension: 'pug'
 }))
 
-app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 if (IS_DEV) {
     const webpack = require('webpack');
     const devMiddleware = require('./middleware/devMiddleware');

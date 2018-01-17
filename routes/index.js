@@ -2,44 +2,30 @@ const router = require('koa-router')()
 
 router.get('/', async(ctx, next) => {
 	await ctx.render('index', {
-        title: 'Blog'
+        route: '/',
+        title: 'NSLYC-WebSize'
 	})
 })
 
-router.get('/essay', async(ctx, next) => {
-	await ctx.render('essay', {
-        title: 'Blog-essay'
+router.get('/try', async(ctx, next) => {
+	await ctx.render('try', {
+        route: '/try',
+        title: 'NSLYC-WebSize essay'
 	})
 })
 
-router.get('/image', async(ctx, next) => {
-	await ctx.render('image', {
-        title: 'Blog-image'
-	})
-})
-
-router.get('/music', async(ctx, next) => {
-	await ctx.render('music', {
-        title: 'Blog-music'
-	})
-})
-
-router.get('/game', async(ctx, next) => {
-	await ctx.render('game', {
-        title: 'Blog-game'
+router.get('/about', async(ctx, next) => {
+	await ctx.render('about', {
+        route: '/about',
+        title: 'NSLYC-WebSize image'
 	})
 })
 
 router.get('/leave', async(ctx, next) => {
 	await ctx.render('leave', {
-        title: 'Blog-leave'
+        route: '/leave',
+        title: 'NSLYC-WebSize leave'
 	})
-})
-
-router.get('/json', async(ctx, next) => {
-	ctx.body = {
-		title: 'koa2 json'
-	}
 })
 
 module.exports = router

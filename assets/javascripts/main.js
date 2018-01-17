@@ -5,13 +5,29 @@ $(function () {
         $('.nav-menu').on('click', function (e) {
             toggle();
         })
-        // 导航栏列表点击事件
-        $('.navs dd').on('click', function (e) {
-            $('.navs dd').removeClass('active');
-            $(this).addClass('active');
-            toggle();
-        })
     }
+    // 导航栏列表点击事件
+    $('.nav li').on('click', function (e) {
+        $('.navs li').removeClass('active');
+        $(this).addClass('active');
+    })
+    // 屏幕滚动事件
+    $(document).on('scroll', function (e) {
+        let top = $(document).scrollTop();
+        if (top >= 200) {
+            $('div.rope').css({
+                height: top+200
+            })
+        } else {
+            $('div.rope').css({
+                height: 200
+            })
+        }
+    })
+    // 回到顶部事件
+    $('div.rope>.top').on('click', function (e) {
+        $('html,body').animate({ scrollTop: 0 }, 500);
+    })
 })
 
 function toggle() {
