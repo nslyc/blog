@@ -126,7 +126,7 @@ if (__PROD__) {
     webpackConfig.devtool = project.production.compiler_devtool;
     console.log(chalkInfo('============= [Enabling plugins for production (OccurenceOrder, UglifyJS, commonsChunk)] ============='));
     webpackConfig.plugins.push(
-        uglifyJsPlugin,
+        // uglifyJsPlugin,
         occurrenceOrderPlugin,
         assetsWebpackPlugin
         // TODO: shouldn't be here
@@ -135,8 +135,8 @@ if (__PROD__) {
 
     // https://webpack.js.org/configuration/performance
     webpackConfig.performance = {
-        maxAssetSize: 100,
-        maxEntrypointSize: 300,
+        maxAssetSize: 1000,
+        maxEntrypointSize: 3000,
         hints: 'warning',
     };
 }

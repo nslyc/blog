@@ -28,6 +28,14 @@ $(function () {
     $('div.rope>.top').on('click', function (e) {
         $('html,body').animate({ scrollTop: 0 }, 500);
     })
+    // 搜索
+    $('.search .search-icon').on('click',function(e) {
+        if ($('.search').hasClass('toggle')) {
+            $('.search').removeClass('toggle')
+        } else {
+            $('.search').addClass('toggle')
+        }
+    })
 })
 
 function toggle() {

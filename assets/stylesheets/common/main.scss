@@ -68,6 +68,74 @@ $path: 'http://127.0.0.1:3000';
             }
         }
     }
+    .search {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 170px;
+        height: 25px;
+        overflow: hidden;
+        .search-icon {
+            position: relative;
+            float: right;
+            margin-left: -1.2em;
+            width: 1em;
+            height: 1em;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .search-icon::before,
+        .search-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            height: .5em;
+        }
+        .search-icon::before {
+            width: .5em;
+            border: .075em currentColor solid;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -o-border-radius: 100%;
+            -ms-border-radius: 100%;
+            border-radius: 100%;
+        }
+        .search-icon::after {
+            top: .425em;
+            left: .6em;
+            width: .175em;
+            background: currentColor;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+        }
+        input {
+            outline-style: none;
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            transition: all 0.35s;
+            transform: translateX(100%);
+        }
+        .search-line {
+            height: 1px;
+            margin-top: 5px;
+            background-color: #fefefe;
+            transform: translateX(100%);
+            transition: all 0.35s;
+        }
+        &.toggle {
+            .search-line,
+            input {
+                transform: translateX(0);
+            }
+        }
+    }
 }
 
 .header-bg {
@@ -101,6 +169,7 @@ $path: 'http://127.0.0.1:3000';
         width: 220px;
         height: 80px;
         background: url($path+'/images/logo.png') no-repeat;
+        cursor: pointer;
     }
 }
 
@@ -124,6 +193,7 @@ $path: 'http://127.0.0.1:3000';
         cursor: pointer;
     }
 }
+
 .bole {
     position: absolute;
     right: 439px;
@@ -132,26 +202,29 @@ $path: 'http://127.0.0.1:3000';
     background: url($path+'/images/bole.png') no-repeat;
     background-size: 50px 100%;
 }
+
 .content {
     height: 300px;
     position: relative;
     .list-left {
-        position: absolute;
-        left: 1px;
-        top: 0;
-        width: 740px; 
+        position: relative;
+        float: left;
+        width: 740px;
         height: 300px;
+        padding-bottom: 80px;
         background: url($path+'/images/left.png') no-repeat right bottom;
+        z-index: 5;
     }
     .list-right {
         position: absolute;
         right: 1px;
         top: 0;
-        width: 460px; 
+        width: 460px;
         height: 100px;
+        padding-bottom: 64px;
         background: url($path+'/images/right.png') no-repeat left bottom;
     }
     .list-bole {
-        height: 300px;
+        height: 380px;
     }
 }

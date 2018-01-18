@@ -1,0 +1,49 @@
+div.zh-almanac#id_almanac(data-id="2")
+    div.hint-bar.clearfix
+        span.title-bar#GZ
+        div.control-bar
+            div.control-module.year-control
+                a.prev#nianjian(action="prev",href="javascript:;")
+                div.control
+                    i.trigger
+                    div.field.year(val="2018") 2018年
+                a.next#nianjia(action="next",href="javascript:;")
+                ul.list.year-list.hidden
+            div.control-module.month-control
+                a.prev#yuejian(action="prev",href="javascript:;")
+                div.control
+                    i.trigger.
+                    div.field.month(val="1") 1月
+                a.next#yuejia(action="next",href="javascript:;")
+                ul.list.month-list.hidden
+            div.btn-today 今天
+    div.alc-container
+        div.left
+            ul.dates-hd.clearfix
+                li.days-title(data-id="6") 日
+                li.days-title(data-id="0") 一
+                li.days-title(data-id="1") 二
+                li.days-title(data-id="2") 三
+                li.days-title(data-id="3") 四
+                li.days-title(data-id="4") 五
+                li.days-title(data-id="5") 六
+            ol.dates-bd.clearfix
+        div.right
+            div.almanac-tips
+                div.dates-bar
+                    span.date
+                    span.weekday
+                div.date-show-panel
+                div.desc
+                    div.lunar
+                    div.lunar-ganzhi
+                    div.lunar-term
+                div.almanac-extra.clearfix
+                    div.suited
+                        h3.st-label 宜
+                        ul.st-items.clearfix(title="")
+                    div.tapu
+                        h3.st-label 忌
+                        ul.st-items.clearfix(title="")
+                    div.ban.hidden
+                        ul.st-items.clearfix(title="")
