@@ -1,0 +1,44 @@
+$path: 'http://127.0.0.1:3000';
+.leave-box {
+
+    .title {
+        position: absolute;
+        left: 210px;
+        top: -210px;
+        width: 360px;
+        height: 120px;
+        background: url($path+'/images/leave.png') no-repeat;
+    }
+    input,
+    textarea {
+        display: block;
+        width: 360px;
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        outline-style: none;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+    input {
+        border-bottom: 1px solid #fff;
+    }
+    textarea {
+        border: 1px solid #fff;
+    }
+    .submit {
+        position: absolute;
+        width: 135px;
+        height: 48px;
+        background: url($path+'/images/submit.png') no-repeat;
+        background-size: cover;
+        cursor: pointer;
+        border-radius: 6px;
+        box-shadow: 1px 1px 3px 0px #fff,-1px -1px 3px 0px #fff;
+    }
+}
+
+.list-bole {
+    height: 250px;
+}

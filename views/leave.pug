@@ -3,6 +3,12 @@ extends layout
 block content
     .w.content
         include rope.pug
-        .list-bole.bole
-        .list-left
-        .list-right
+        .list-wrap.clearfix
+            .list-bole.bole
+            .con-box.leave-box
+                .title
+                input.name(type="text",placeholder="尊姓台甫")
+                input.email(type="text",placeholder="联系邮箱")
+                input.site(type="text",placeholder="个人站点")
+                textarea.leave(name="", cols="30", rows="10",placeholder="畅所欲言")
+                .submit

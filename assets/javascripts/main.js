@@ -16,7 +16,7 @@ $(function () {
         let top = $(document).scrollTop();
         if (top >= 200) {
             $('div.rope').css({
-                height: top+200
+                height: top + 200
             })
         } else {
             $('div.rope').css({
@@ -26,14 +26,24 @@ $(function () {
     })
     // 回到顶部事件
     $('div.rope>.top').on('click', function (e) {
-        $('html,body').animate({ scrollTop: 0 }, 500);
+        $('html,body').animate({
+            scrollTop: 0
+        }, 500);
     })
     // 搜索
-    $('.search .search-icon').on('click',function(e) {
-        if ($('.search').hasClass('toggle')) {
-            $('.search').removeClass('toggle')
+    $('.search .search-icon').on('click', function (e) {
+        if ($('.search').hasClass('toggle') && !$('.search input').val()) {
+            $('.search').removeClass('toggle');
+        } else if (!!$('.search input').val()) {
+            console.log('search');
         } else {
-            $('.search').addClass('toggle')
+            $('.search').addClass('toggle');
+        }
+    })
+    // 点击enter搜索
+    $('.search input').on('keyup', function (e) {
+        if (e.which === 13) {
+            console.log('search');
         }
     })
 })

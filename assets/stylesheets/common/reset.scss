@@ -6,98 +6,237 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  background:transparent;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
 }
 
 body {
-  line-height:1;
-  background-color: #7cccfd;
+    line-height: 1;
+    background-color: #7cccfd;
 }
 
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-  display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 
 ul {
-  list-style:none;
+    list-style: none;
 }
 
-blockquote, q {
-  quotes:none;
+blockquote,
+q {
+    quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content:'';
-  content:none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
 
 a {
-  margin:0;
-  padding:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
-  color: #000 !important;
-  text-decoration: none !important;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    color: #000 !important;
+    text-decoration: none !important;
 }
 
+
 /* change colours to suit your needs */
+
 ins {
-  background-color:#ff9;
-  color:#000;
-  text-decoration:none;
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
 }
 
+
 /* change colours to suit your needs */
+
 .mark {
-  background-color:#ff9;
-  color:#000;
-  font-style:italic;
-  font-weight:bold;
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .del {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
-abbr[title], dfn[title] {
-  border-bottom:1px dotted;
-  cursor:help;
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
 }
 
 table {
-  border-collapse:collapse;
-  border-spacing:0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
+
 
 /* change border colour to suit your needs */
+
 hr {
-  display:block;
-  height:1px;
-  border:0;
-  border-top:1px solid #cccccc;
-  margin:1em 0;
-  padding:0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
-input, select {
-  vertical-align:middle;
+input,
+select {
+    vertical-align: middle;
+}
+
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #f0f0f0;
+}
+
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #f0f0f0;
+}
+
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #f0f0f0;
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #f0f0f0;
+}
+
+textarea::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #f0f0f0;
+}
+
+textarea::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #f0f0f0;
+}
+
+textarea:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #f0f0f0;
+}
+
+textarea:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #f0f0f0;
+}
+
+::-webkit-scrollbar-track-piece {
+    //滚动条凹槽的颜色，还可以设置边框属性
+    background-color: #f8f8f8;
+}
+
+ ::-webkit-scrollbar {
+    //滚动条的宽度
+    width: 6px;
+    height: 6px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    //滚动条的设置
+    background-color: #cbcbcb;
+    background-clip: padding-box;
+    min-height: 28px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
 }
