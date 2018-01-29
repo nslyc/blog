@@ -1,0 +1,39 @@
+.search-icon {
+    position: relative;
+    float: right;
+    margin-left: -1.2em;
+    width: 1em;
+    height: 1em;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.search-icon::before,
+.search-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: .5em;
+}
+.search-icon::before {
+    width: .5em;
+    border: .075em currentColor solid;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+}
+.search-icon::after {
+    top: .425em;
+    left: .6em;
+    width: .175em;
+    background: currentColor;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+}

@@ -1,3 +1,196 @@
-@media only screen and (min-width: 751px) {
-    @import '../component/nav/nav-ms.scss';
+$path: 'http://127.0.0.1:3000';
+@media only screen and (min-device-width: 771px) and (max-device-width: 1336px) {
+    .w {
+        width: 770px;
+        margin: 0 auto;
+    }
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 96px;
+        height: 60px;
+        z-index: 99;
+        ul {
+            li {
+                a {
+                    display: block;
+                    margin: 20px 0;
+                    text-align: center;
+                    img {
+                        margin: 0 auto;
+                    }
+                    span {
+                        display: block;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .search {
+            position: fixed;
+            right: 20px;
+            top: 30px;
+            width: 190px;
+            height: 25px;
+            overflow: hidden;
+            color: #fff;
+            input {
+                width: 100%;
+                outline-style: none;
+                border: none;
+                background: transparent;
+                font-size: 14px;
+                transition: all 0.35s;
+                transform: translateX(100%);
+                color: #fff;
+            }
+            .search-line {
+                height: 1px;
+                margin-top: 5px;
+                background-color: #fefefe;
+                transform: translateX(100%);
+                transition: all 0.35s;
+            }
+            &.toggle {
+                .search-line,
+                input {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+    .header-bg {
+        height: 728px;
+        background: url($path+'/images/bg-top-sm.png') no-repeat;
+        position: relative;
+        overflow: hidden;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            height: 692px;
+            background: #7cccfd;
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            filter: blur(5px);
+            overflow: hidden;
+        }
+        &::before {
+            left: -10px;
+        }
+        &::after {
+            right: -10px;
+        }
+        .logo {
+            display: none;
+        }
+    }
+    .bole {
+        position: absolute;
+        right: 8.1px;
+        top: 0px;
+        width: 51px;
+        background: url($path+'/images/bole.png') no-repeat;
+        background-size: 51px 100%;
+    }
+    .rope {
+        .top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 80px;
+            height: 132px;
+            background: url($path+'/images/top-ms.png') no-repeat;
+            cursor: pointer;
+            z-index: 9;
+            display: none;
+        }
+    }
+    .content {
+        position: relative;
+        .list-wrap {
+            position: relative;
+        }
+        .list-left {
+            position: relative;
+            float: left;
+            width: 740px; // height: 300px;
+            padding-bottom: 80px;
+            background: url($path+'/images/left.png') no-repeat right bottom;
+            z-index: 5;
+        }
+        .list-right {
+            display: none;
+        }
+        .list-bole {
+            min-height: 100px;
+        }
+        .con-box {
+            position: relative;
+            height: 200px;
+            padding-left: 210px;
+            padding-bottom: 279px;
+            background: url($path+'/images/bg-con.png') no-repeat left bottom;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 20px;
+                height: 250px;
+                background: #7cccfd;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                filter: blur(5px);
+                overflow: hidden;
+            }
+            &::before {
+                left: -10px;
+            }
+            &::after {
+                right: -10px;
+            }
+        }
+    }
+    .footer {
+        height: 604px;
+        background: url($path+'/images/bg-btm-sm.png') no-repeat;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            height: 604px;
+            background: #7cccfd;
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            filter: blur(5px);
+            overflow: hidden;
+        }
+        &::before {
+            left: -10px;
+        }
+        &::after {
+            right: -10px;
+        }
+        .text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .red-heart {
+            color: #f33;
+        }
+        .clock {
+            display: none;
+        }
+    }
 }

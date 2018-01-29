@@ -1,4 +1,67 @@
-@media only screen and (max-width: 750px) {
-    @import '../component/nav/nav-ss.scss';
+$path: 'http://127.0.0.1:3000';
+@mixin px($name, $px) {
+    #{$name}: round($px / 2) * 1px;
+    [data-dpr="2"] & {
+        #{$name}: $px * 1px;
+    } // for mx3
+    [data-dpr="2.5"] & {
+        #{$name}: round($px * 2.5 / 2) * 1px;
+    } // for 小米note
+    [data-dpr="2.625"] & {
+        #{$name}: round($px * 2.625 / 2) * 1px;
+    } // for 小米note
+    [data-dpr="2.75"] & {
+        #{$name}: round($px * 2.75 / 2) * 1px;
+    }
+    [data-dpr="3"] & {
+        #{$name}: round($px / 2 * 3) * 1px;
+    }
+    [data-dpr="3.5"] & {
+        #{$name}: round($px / 2 * 3.5) * 1px;
+    } // for 三星note4
+    [data-dpr="4"] & {
+        #{$name}: $px * 2px;
+    }
+}
 
+@media only screen and (max-device-width: 770px) {
+    html,
+    body {
+        height: 100%;
+    }
+    .nav {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 8rem;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.3);
+        ul {
+            margin-top: 6rem;
+            li {
+                a {
+                    display: block;
+                    @include px(margin-bottom, 10);
+                    @include px(padding-left, 30);
+                    img {
+                        @include px(width, 64);
+                        @include px(height, 64);
+                        vertical-align: middle;
+                    }
+                    span {
+                        color: #fff;
+                        @include px(margin-left, 30);
+                        @include px(font-size, 30);
+                    }
+                }
+            }
+        }
+    }
+    .header-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 8rem;
+        height: 6rem;
+    }
 }
