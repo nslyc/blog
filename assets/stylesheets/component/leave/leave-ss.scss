@@ -1,25 +1,26 @@
 $path: 'http://127.0.0.1:3000';
 .leave-box {
-
+    @include px(width, 490);
+    margin: 0 auto;
     .title {
-        position: absolute;
-        left: 210px;
-        top: -210px;
-        width: 360px;
-        height: 120px;
+        @include px(width, 480);
+        @include px(height, 160);
+        margin: 0 auto;
         background: url($path+'/images/leave.png') no-repeat;
+        background-size: cover;
     }
     input,
     textarea {
         display: block;
-        width: 360px;
-        padding: 5px;
+        @include px(width, 480);
+        @include px(padding, 5);
+        @include px(margin-bottom, 25);
         background-color: transparent;
         border: none;
         outline-style: none;
-        font-size: 16px;
+        @include px(font-size, 30);
+        font-family: 'Microsoft Yahei';
         color: #fff;
-        margin-bottom: 15px;
     }
     input {
         border-bottom: 1px solid #fff;
@@ -28,17 +29,14 @@ $path: 'http://127.0.0.1:3000';
         border: 1px solid #fff;
     }
     .submit {
-        position: absolute;
-        width: 135px;
-        height: 48px;
+        float: right;
+        @include px(width, 160);
+        @include px(height, 60);
+        @include px(margin-bottom, 20);
         background: url($path+'/images/submit.png') no-repeat;
         background-size: cover;
         cursor: pointer;
         border-radius: 6px;
         box-shadow: 1px 1px 3px 0px #fff,-1px -1px 3px 0px #fff;
     }
-}
-
-.list-bole {
-    height: 250px;
 }

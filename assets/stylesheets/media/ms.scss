@@ -1,5 +1,6 @@
 $path: 'http://127.0.0.1:3000';
-@media only screen and (min-device-width: 771px) and (max-device-width: 1336px) {
+@media only screen and (min-device-width: 770px) and (max-device-width: 1200px) {
+    @import '../component/leave/leave-ms.scss';
     .w {
         width: 770px;
         margin: 0 auto;
@@ -22,7 +23,14 @@ $path: 'http://127.0.0.1:3000';
                     }
                     span {
                         display: block;
-                        color: #fff;
+                        color: #251d1d;
+                    }
+                }
+                &.active {
+                    a {
+                        span {
+                            color: #fff;
+                        }
                     }
                 }
             }
@@ -102,7 +110,7 @@ $path: 'http://127.0.0.1:3000';
             right: 20px;
             bottom: 20px;
             width: 80px;
-            height: 132px;
+            height: 97px;
             background: url($path+'/images/top-ms.png') no-repeat;
             cursor: pointer;
             z-index: 9;
@@ -190,7 +198,27 @@ $path: 'http://127.0.0.1:3000';
             color: #f33;
         }
         .clock {
-            display: none;
+            position: absolute;
+            left: 395px;
+            top: 252px;
+            width: 26px;
+            height: 26px;
+            .hour {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 26px;
+                height: 26px;
+                background: url($path+'/images/hour-pointer.png') no-repeat;
+            }
+            .minute {
+                position: absolute;
+                left: 1px;
+                top: 0;
+                width: 26px;
+                height: 26px;
+                background: url($path+'/images/minute-pointer.png') no-repeat;
+            }
         }
     }
 }

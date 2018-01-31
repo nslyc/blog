@@ -1,12 +1,7 @@
 @charset 'UTF-8';
 // 重置样式
 @import './common/reset.scss';
-@import './common/font.scss';
 @import './common/icon.scss';
-@import './common/media.scss';
-@import './common/main.scss';
-
-@import './component/leave/leave.scss';
 
 // 媒体查询响应式
 @import './media/ss.scss';

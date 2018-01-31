@@ -1,5 +1,6 @@
 $path: 'http://127.0.0.1:3000';
-@media only screen and (min-device-width: 1337px) {
+@media only screen and (min-device-width: 1200px) {
+    @import '../component/leave/leave-ls.scss';
     .w {
         width: 1200px;
         margin: 0 auto;
@@ -24,6 +25,9 @@ $path: 'http://127.0.0.1:3000';
                     img {
                         vertical-align: middle;
                         margin-right: 10px;
+                    }
+                    span {
+                        color: #251d1d;
                     }
                 }
                 &.active {
@@ -128,7 +132,7 @@ $path: 'http://127.0.0.1:3000';
     
     .bole {
         position: absolute;
-        right: 439.1px;
+        right: 438.1px;
         top: 0px;
         width: 51px;
         background: url($path+'/images/bole.png') no-repeat;

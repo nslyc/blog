@@ -25,9 +25,25 @@ $path: 'http://127.0.0.1:3000';
 }
 
 @media only screen and (max-device-width: 770px) {
+    @import '../component/leave/leave-ss.scss';
     html,
     body {
         height: 100%;
+    }
+    html {
+        overflow: hidden;
+    }
+    body {
+        transition: transform 0.75s;
+    }
+    .wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        display: none;
     }
     .nav {
         position: absolute;
@@ -35,33 +51,114 @@ $path: 'http://127.0.0.1:3000';
         top: 0;
         width: 8rem;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: #d6d6d6;
+        transform: translateX(-100%);
+        transition: all 0.75s;
+        overflow: hidden;
         ul {
-            margin-top: 6rem;
+            @include px(margin-top, 220);
             li {
+                transform: translate(-100%);
                 a {
                     display: block;
-                    @include px(margin-bottom, 10);
-                    @include px(padding-left, 30);
+                    @include px(margin-bottom, 15);
+                    @include px(padding-left, 40);
+                    @include px(padding-top, 10);
+                    @include px(padding-bottom, 10);
                     img {
                         @include px(width, 64);
                         @include px(height, 64);
                         vertical-align: middle;
                     }
                     span {
-                        color: #fff;
+                        color: #251d1d;
                         @include px(margin-left, 30);
                         @include px(font-size, 30);
                     }
                 }
+                &.active {
+                    a {
+                        background-color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+        }
+        .logo {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            @include px(margin-top, 30);
+            @include px(width, 160);
+            @include px(height, 160); // width: 8rem;
+            // height: 6rem;
+            background: url($path+'/images/logo-ss.png') no-repeat;
+            background-size: cover;
+        }
+        .search {
+            width: 8rem;
+            overflow: hidden;
+            color: #fff;
+            position: relative;
+            input {
+                outline-style: none;
+                border: none;
+                background: transparent;
+                width: 8rem;
+                @include px(height, 60);
+                @include px(padding-left, 10);
+                @include px(font-size, 30);
+                transition: all 0.35s; 
+                transform: translateX(100%);
+                color: #fff;
+                box-sizing: border-box;
+            }
+            .search-icon {
+                position: absolute;
+                @include px(right, 10);
+                @include px(font-size, 30);
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .search-line {
+                height: 1px;
+                background-color: #fefefe;
+                transform: translateX(100%);
+                transition: all 0.35s;
+            }
+            &.toggle {
+                .search-line,
+                input {
+                    transform: translateX(0);
+                }
             }
         }
     }
-    .header-bg {
+    .rope {
+        .top {
+            position: fixed;
+            @include px(right, 30);
+            @include px(bottom, 30);
+            @include px(width, 80);
+            @include px(height, 97);
+            background: url($path+'/images/top-ms.png') no-repeat;
+            z-index: 9;
+            display: none;
+        }
+    }
+    .content {
+        height: 100%;
+        overflow: auto;
+        .test {
+        @include px(bottom, 20);
+        }
+    }
+    .footer {
         position: absolute;
-        left: 0;
-        top: 0;
         width: 8rem;
-        height: 6rem;
+        left: -8rem;
+        @include px(bottom, 20);
+        @include px(font-size, 17);
+        text-align: center;
     }
 }

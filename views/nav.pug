@@ -1,4 +1,5 @@
 - var navs = [ { title:'首页', path:'/', icon:'images/home.png' }, { title:'实验', path:'/try', icon:'images/nest.png' }, { title:'关于', path:'/about', icon:'images/chook.png' }, { title:'留言', path:'/leave', icon:'images/bird.png' } ]
+.wrapper
 .nav.w
     ul
         - for (var x = 0; x < navs.length; x++)
@@ -16,5 +17,6 @@
         input(placeholder="请输入关键字")
         .search-icon
         .search-line
+    .logo
 .header-bg.w
     .logo
