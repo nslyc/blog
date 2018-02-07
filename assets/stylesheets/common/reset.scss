@@ -124,7 +124,7 @@ a {
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
-    color: #000 !important;
+    color: #000;
     text-decoration: none !important;
 }
 
@@ -249,4 +249,7 @@ textarea:-ms-input-placeholder {
 }
 .clearfix {
     zoom: 1;
+}
+.red-heart {
+    color: #f33;
 }

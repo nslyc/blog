@@ -10,7 +10,7 @@ const assetsMiddleware = require('./middleware/assetsMiddleware');
 const index = require('./routes/index.js');
 const chalkInfo = require('./build/chalkConfig')['chalkInfo'];
 
-const PORT = process.env.HTTP_PORT || 3000;
+const PORT = process.env.HTTP_PORT || 8000;
 const IP = process.env.HTTP_IP || undefined;
 const IS_DEV = process.env.NODE_ENV === 'development';
 const IS_PROD = process.env.NODE_ENV === 'production';

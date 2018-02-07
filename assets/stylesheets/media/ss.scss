@@ -1,4 +1,3 @@
-$path: 'http://127.0.0.1:3000';
 @mixin px($name, $px) {
     #{$name}: round($px / 2) * 1px;
     [data-dpr="2"] & {
@@ -108,7 +107,7 @@ $path: 'http://127.0.0.1:3000';
                 @include px(height, 60);
                 @include px(padding-left, 10);
                 @include px(font-size, 30);
-                transition: all 0.35s; 
+                transition: all 0.35s;
                 transform: translateX(100%);
                 color: #fff;
                 box-sizing: border-box;
@@ -149,8 +148,76 @@ $path: 'http://127.0.0.1:3000';
     .content {
         height: 100%;
         overflow: auto;
-        .test {
-        @include px(bottom, 20);
+        .con-box {
+            @include px(padding, 12);
+            @include px(margin-bottom, 20);
+            background-color: rgba(255,255,255,0.1);
+            .header {
+                @include px(height, 60);
+                @include px(margin-bottom, 20);
+                .category {
+                    display: inline-block;
+                    @include px(height, 50);
+                    @include px(padding-left, 20);
+                    @include px(padding-right, 20);
+                    @include px(margin-left, 20);
+                    @include px(margin-top, -10);
+                    @include px(font-size, 30);
+                    @include px(line-height, 50);
+                    @include px(border-radius, 6);
+                    position: relative;
+                    background-color: #ff3333ad;
+                    color: #fff;
+                    vertical-align: middle;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        @include px(right, -20);
+                        @include px(margin-top, -10);
+                        border: 10px solid transparent;
+                        @include px(border-width, 10);
+                        border-left-color: #ff3333ad;
+                    }
+                }
+                .title {
+                    display: inline-block;
+                    @include px(max-width, 540);
+                    @include px(height, 60);
+                    @include px(margin-left, 30);
+                    @include px(font-size, 40);
+                    @include px(line-height, 60);
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: #fff;
+                }
+            }
+            .body {
+                @include px(height, 120);
+                .cover {
+                    float: left;
+                    @include px(width, 180);
+                    @include px(height, 120);
+                    @include px(margin-left, 20);
+                }
+                .digest {
+                    float: left;
+                    @include px(width, 460);
+                    @include px(height, 100);
+                    @include px(margin-left, 30);
+                    @include px(padding, 10);
+                    p {
+                        @include px(height, 100);
+                        @include px(font-size, 30);
+                        @include px(line-height, 33);
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        color: #767676;
+                    }
+                }
+            }
         }
     }
     .footer {
