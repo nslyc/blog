@@ -1,6 +1,28 @@
 const request = require('request');
-const url = '172.20.10.166:3000';
+const url = 'http://172.20.10.166:3000';
 
+// 查找文章分类列表
+exports.queryArticlesCategories = () => {
+    return new Promise((resolve, reject) => {
+        request.get(`${url}/api/article/categories`, function (err, res, body) {
+            if (err) {
+                reject(err);
+            }
+            resolve(body);
+        })
+    });
+}
+// 通过文章id查找文章分类
+exports.queryArticlesCategoriesById = (id) => {
+    return new Promise((resolve, reject) => {
+        request.get(`${url}/api/article/categories/${id}`, function (err, res, body) {
+            if (err) {
+                reject(err);
+            }
+            resolve(body);
+        })
+    });
+}
 // 查找文章列表
 exports.queryArticles = () => {
     return new Promise((resolve, reject) => {

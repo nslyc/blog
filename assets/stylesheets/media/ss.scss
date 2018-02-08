@@ -185,7 +185,7 @@
                     @include px(max-width, 540);
                     @include px(height, 60);
                     @include px(margin-left, 30);
-                    @include px(font-size, 40);
+                    @include px(font-size, 35);
                     @include px(line-height, 60);
                     white-space: nowrap;
                     text-overflow: ellipsis;
@@ -199,6 +199,15 @@
                     @include px(width, 180);
                     @include px(height, 120);
                     @include px(margin-left, 20);
+                    overflow: hidden;
+                    position: relative;
+                    img {
+                        position: absolute;
+                        left: -25%;
+                        top: -25%;
+                        max-width: 200%;
+                        max-height: 200%;
+                    }
                 }
                 .digest {
                     float: left;

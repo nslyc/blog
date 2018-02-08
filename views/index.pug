@@ -3,37 +3,23 @@ extends layout
 block content
     .w.content
         include rope.pug
-        .list-wrap.clearfix
-            .list-bole.bole
-            .list-right
-            .con-box
-                .header
-                    span.category 随笔
-                    a.title 文章标题
-                .body
-                    a.cover
-                        img(src="", alt="")
-                    .digest
-                        p 发阿达-水水 水水。水水水水水水水水水水水水发阿，达水水水水水水水水水水水水水水水水发阿达水水水水水水水水水水水水水水水水
-                .footer
-                    .time
-                    .author
-                    .review
-        .list-wrap.clearfix
-            .list-bole.bole
-            .list-right
-            .con-box
-                .header
-                    span.category 随笔
-                    a.title 文章标题
-                .body
-                    a.cover
-                        img(src="", alt="")
-                    .digest
-                        p 发阿达-水水 水水。水水水水水水水水水水水水发阿，达水水水水水水水水水水水水水水水水发阿达水水水水水水水水水水水水水水水水
-                .footer
-                    .time
-                    .author
-                    .review
+        - for (var x = 0; x < data.length; x++)
+            .list-wrap.clearfix
+                .list-bole.bole
+                .list-right
+                .con-box
+                    .header
+                        span.category 转载
+                        a.title(href=data[x].href)= data[x].title
+                    .body
+                        a.cover
+                            img(src=`http://172.20.10.166:3000/${data[x].cover}`, alt="")
+                        .digest
+                            p= data[x].content
+                    .footer
+                        .time
+                        .author
+                        .review
+
 
                     
