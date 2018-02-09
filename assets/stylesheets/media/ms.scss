@@ -59,6 +59,13 @@
                 transform: translateX(100%);
                 transition: all 0.35s;
             }
+            .search-icon {
+                position: absolute;
+                right: -8px;
+                top: -3px;
+                transform: scale(0.6) rotate(45deg);
+                color: #fff;
+            }
             &.toggle {
                 .search-line,
                 input {

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    .w.content.article-con
+        .list-wrap.clearfix
+            .list-bole.bole
+            .list-right
+            .con-box
+                .title= data.title
+                span.icono-user 
+                span.author= data.author
+                span.icono-clock
+                span.time= data.time
+                .con!= data.content
+                .other-article
+                    - for (var x = 0; x < articles.length; x++)
+                        .articles
+                            a(href=articles[x].href)= articles[x].title
+                .review-list
+                    if reviews.length === 0
+                        span 暂无评论
+                    else
+                        - for (var x = 0; x < reviews.length; x++)
+                            .name
+                                if reviews[x].site !== ''
+                                    a(href=reviews[x].site) reviews[x].name
+                                    span 说：
+                                else
+                                    span reviews[x].name
+                                    span 说：
+                .add-review
+                    h3 我要发表看法
+                    input.name(type="text",placeholder="您的大名")
+                    input.email(type="text",placeholder="个人邮箱")
+                    input.site(type="text",placeholder="个人网站")
+                    textarea.leave(name="", cols="30", rows="10",placeholder="想说的话")
+                    .submit 提交

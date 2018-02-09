@@ -116,8 +116,8 @@
                 position: absolute;
                 @include px(right, 10);
                 @include px(font-size, 30);
-                top: 50%;
-                transform: translateY(-50%);
+                top: 25%;
+                color: #fff;
             }
             .search-line {
                 height: 1px;
@@ -151,8 +151,8 @@
         .con-box {
             @include px(padding, 12);
             @include px(margin-bottom, 20);
-            background-color: rgba(255,255,255,0.1);
-            .header {
+            background-color: rgba(255, 255, 255, 0.1);
+            .article-header {
                 @include px(height, 60);
                 @include px(margin-bottom, 20);
                 .category {
@@ -192,7 +192,7 @@
                     color: #fff;
                 }
             }
-            .body {
+            .article-body {
                 @include px(height, 120);
                 .cover {
                     float: left;
@@ -225,6 +225,116 @@
                         overflow: hidden;
                         color: #767676;
                     }
+                }
+            }
+        }
+    }
+    .article-con {
+        .con-box {
+            @include px(padding, 30);
+            .title {
+                @include px(margin-top, 20);
+                @include px(margin-bottom, 20);
+                @include px(font-size, 22);
+            }
+            span {
+                @include px(font-size, 12);
+                color: #888;
+                &.icono-user {
+                    transform: scale(0.8);
+                }
+                &.author {
+                    @include px(margin-right, 20);
+                }
+            }
+            .con {
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    @include px(margin-top, 20);
+                    @include px(margin-bottom, 20);
+                }
+                h1 {
+                    @include px(font-size, 28);
+                }
+                h2 {
+                    @include px(font-size, 24);
+                }
+                h3 {
+                    @include px(font-size, 20);
+                }
+                h4 {
+                    @include px(font-size, 18);
+                }
+                h5 {
+                    @include px(font-size, 16);
+                }
+                h6 {
+                    @include px(font-size, 14);
+                }
+                ul {
+                    li {
+                        @include px(font-size, 12);
+                    }
+                }
+                a {
+                    text-decoration: underline;
+                }
+                p {
+                    @include px(font-size, 15);
+                    @include px(line-height, 45);
+                    @include px(margin-top, 10);
+                    @include px(margin-bottom, 10);
+                    text-indent: 2em;
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    @include px(margin-top, 20);
+                    @include px(margin-bottom, 20);
+                }
+            }
+            .add-review {
+                h3 {
+                    @include px(font-size, 30);
+                    @include px(margin-top, 25);
+                    @include px(margin-bottom, 25);
+                    color: #fff;
+                }
+                input,
+                textarea {
+                    display: block;
+                    width: 100%;
+                    @include px(padding, 5);
+                    @include px(margin-bottom, 25);
+                    background-color: transparent;
+                    border: none;
+                    outline-style: none;
+                    @include px(font-size, 30);
+                    font-family: 'Microsoft Yahei';
+                    color: #fff;
+                }
+                input {
+                    border-bottom: 1px solid #fff;
+                }
+                textarea {
+                    border: 1px solid #fff;
+                }
+                .submit {
+                    float: right;
+                    @include px(width, 160);
+                    @include px(height, 60);
+                    @include px(margin-bottom, 20);
+                    cursor: pointer;
+                    border-radius: 6px;
+                    box-shadow: 1px 1px 3px 0px #fff,-1px -1px 3px 0px #fff;
+                    text-align: center;
+                    @include px(line-height, 60);
+                    @include px(font-size, 28);
+                    color: #fff;
                 }
             }
         }

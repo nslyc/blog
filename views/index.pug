@@ -1,25 +1,25 @@
 extends layout
 
 block content
-    .w.content
+    .w.content.index-con
         include rope.pug
-        - for (var x = 0; x < data.length; x++)
-            .list-wrap.clearfix
-                .list-bole.bole
-                .list-right
-                .con-box
-                    .header
-                        span.category 转载
-                        a.title(href=data[x].href)= data[x].title
-                    .body
-                        a.cover
-                            img(src=`http://172.20.10.166:3000/${data[x].cover}`, alt="")
-                        .digest
-                            p= data[x].content
-                    .footer
-                        .time
-                        .author
-                        .review
+        .list-wrap.clearfix
+            .list-bole.bole
+            .list-right
+            .con-box
+                - for (var x = 0; x < data.length; x++)
+                    .list-article
+                        .article-header
+                            span.category 转载
+                            a.title(href=data[x].href)= data[x].title
+                        .article-body
+                            a.cover
+                                img(src=`http://172.20.10.166:3000/${data[x].cover}`, alt="")
+                            .digest
+                                p= data[x].content
+                        .article-footer
+                            .time
+                            .author
+                            .review
 
 
-                    

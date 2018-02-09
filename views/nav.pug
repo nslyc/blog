@@ -1,4 +1,4 @@
-- var navs = [ { title:'首页', path:'/', icon:'images/home.png' }, { title:'实验', path:'/try', icon:'images/nest.png' }, { title:'关于', path:'/about', icon:'images/chook.png' }, { title:'留言', path:'/leave', icon:'images/bird.png' } ]
+- var navs = [ { title:'首页', path:'/', icon:'/images/home.png' }, { title:'实验', path:'/try', icon:'/images/nest.png' }, { title:'关于', path:'/about', icon:'/images/chook.png' }, { title:'留言', path:'/leave', icon:'/images/bird.png' } ]
 .wrapper
 .nav.w
     ul
@@ -15,7 +15,7 @@
                         span= navs[x].title
     .search
         input(placeholder="请输入关键字")
-        .search-icon
+        span.search-icon.icono-search
         .search-line
     .logo
 .header-bg.w

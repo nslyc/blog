@@ -1,12 +1,13 @@
 const router = require('koa-router')()
 const api = require('../api/api');
 const urlEncode = require('../tools/urlEncode');
+const time = require('../tools/time');
 
 router.get('/', async (ctx, next) => {
     await api.queryArticles().then(res => {
         let data = JSON.parse(res)['list'];
         data.forEach(ele => {
-            ele.href = `/article/${urlEncode.encodeId(ele.id+'')}`
+            ele.href = `http://127.0.0.1:8000/article/${urlEncode.encodeId(ele.id+'')}`
         });
         return ctx.render('index', {
             route: '/',
@@ -38,10 +39,35 @@ router.get('/leave', async (ctx, next) => {
 })
 
 router.get('/article/:id', async (ctx, next) => {
-    let id = urlEncode.encodeId(ctx.parse.id);
-    await ctx.render('article', {
-        route: '/article',
-        title: 'LTP - 文章标题'
+    let id = urlEncode.decodeId(ctx.params.id);
+    let data, articles, reviews;
+    await api.queryArticlesById(id).then(res => {
+        data = JSON.parse(res)[0];
+        data.time = time.timeFormat(data.create_time);
+        return api.queryArticlesByCategoriesId(data.categories_id);
+    }).then(res => {
+        articles = JSON.parse(res)['list'];
+        let index;
+        articles.forEach((ele, i) => {
+            ele.href = `http://127.0.0.1:8000/article/${urlEncode.encodeId(ele.id+'')}`
+            if (Number(ele.id) === Number(id)) {
+                index = i;
+            }
+        })
+        articles.splice(index, 1);
+        if (articles.length >= 4) {
+            articles.slice(0, 4);
+        }
+        return api.queryReviewsByArticlesId(id);
+    }).then(res => {
+        reviews = JSON.parse(res)['list'];
+        return ctx.render('article', {
+            title: `LTP - ${data.title} - ${data.author}`,
+            articles: articles,
+            reviews: reviews,
+            data: data
+        })
+
     })
 })
 

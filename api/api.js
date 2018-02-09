@@ -45,6 +45,17 @@ exports.queryArticlesById = (id) => {
         })
     });
 }
+// 查找分类下的文章列表(通过分类id)
+exports.queryArticlesByCategoriesId = (id) => {
+    return new Promise((resolve, reject) => {
+        request.get(`${url}/api/articles/categories/${id}`, function (err, res, body) {
+            if (err) {
+                reject(err);
+            }
+            resolve(body);
+        })
+    });
+}
 // 通过文章id查找文章评论
 exports.queryReviewsByArticlesId = (id) => {
     return new Promise((resolve, reject) => {
