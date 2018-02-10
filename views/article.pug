@@ -13,25 +13,33 @@ block content
                 span.time= data.time
                 .con!= data.content
                 .other-article
+                    h3.list-title 其他文章
                     - for (var x = 0; x < articles.length; x++)
                         .articles
+                            span
                             a(href=articles[x].href)= articles[x].title
                 .review-list
+                    h3.list-title 最新评论
                     if reviews.length === 0
-                        span 暂无评论
+                        span.none 暂无评论
                     else
                         - for (var x = 0; x < reviews.length; x++)
-                            .name
-                                if reviews[x].site !== ''
-                                    a(href=reviews[x].site) reviews[x].name
-                                    span 说：
-                                else
-                                    span reviews[x].name
-                                    span 说：
+                            .reviews
+                                .name
+                                    if reviews[x].site !== ''
+                                        span
+                                            a(href=reviews[x].site) reviews[x].name
+                                        span 在（ #[i=reviews[x].time] ）说：
+                                    else
+                                        span reviews[x].name
+                                        span 说：
+                                .say
+                                    p!= reviews[x].content
                 .add-review
-                    h3 我要发表看法
-                    input.name(type="text",placeholder="您的大名")
-                    input.email(type="text",placeholder="个人邮箱")
-                    input.site(type="text",placeholder="个人网站")
-                    textarea.leave(name="", cols="30", rows="10",placeholder="想说的话")
-                    .submit 提交
+                    h3.list-title 发表看法
+                    .review-wrap
+                        input.name(type="text",placeholder="您的大名")
+                        input.email(type="text",placeholder="个人邮箱")
+                        input.site(type="text",placeholder="个人网站")
+                        textarea.leave(name="", cols="30", rows="10",placeholder="想说的话")
+                        .submit 提交
